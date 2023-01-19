@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>ColombiaTex</title>
+  </head>
+  <body>
+    <main class="coltex-main">
+      <div class="coltex-banner">
+        <img
+          src="/arquivos//Qst-ctex-landing-banner-dsk.jpg"
+          alt="Colombiatex con quest"
+        />
+        <img
+          src="/arquivos/Qst-ctex-landing-banner-mb.jpg"
+          alt="Colombiatex con quest"
+        />
+      </div>
+
+      <div class="filtros">
+        <ul>
+          <li><a href="">JEANS</a></li>
+          <li><a href="">CHAQUETAS</a></li>
+          <li><a href="">FALDAS</a></li>
+          <li><a href="">BERMUDAS</a></li>
+        </ul>
+      </div>
+
+      <div class="title-patro-cont">
+        <img
+          src="/arquivos/Qst-title-patro-dsk.png"
+          alt="Quest Colombiatex 2023"
+        />
+      </div>
+
+      <div class="denim-cont-img">
+        <img src="/arquivos/Qst-denim-bg-dsk.png" alt="" />
+
+        <div class="denim-cont">
+          <div class="denim-izq">
+            <img
+              src="/arquivos/Qst-denim-vid.gif"
+              alt="Quest denim Colombiatex"
+            />
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea quae
+              explicabo alias maiores ipsa aspernatur deserunt hic excepturi
+              velit. Ipsam praesentium officia nulla adipisci nesciunt
+              blanditiis earum maxime eius odit! Laboriosam ipsum, laudantium
+              non voluptatem velit vero quod illo inventore magni harum error
+              qui sunt ex est cumque nisi aut.
+            </p>
+          </div>
+          <div class="denim-der">
+            <img
+              src="/arquivos/Qst-title-life-dsk.png"
+              alt="La vida es jeans Quest Colombiatex"
+            />
+            <p>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sunt
+              molestias in voluptates illo est voluptatem maxime accusantium
+              natus animi, obcaecati necessitatibus vel quod voluptatibus optio
+              molestiae quos officia placeat quo perspiciatis odit ducimus!
+              Mollitia, est.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="filtrado">
+        <ul>
+          <li class="selected">JEANS</li>
+          <li>CHAQUETAS</li>
+          <li>FALDAS</li>
+          <li>BERMUDAS</li>
+        </ul>
+      </div>
+
+      <div class="carousel-cont">
+        <div id="c-j" class="show">JEANS</div>
+        <div id="c-c" class="hide">CHAQUETAS</div>
+        <div id="c-f" class="hide">FALDAS</div>
+        <div id="c-b" class="hide">BERMUDAS</div>
+      </div>
+
+      <div class="experiencia-quest">
+        <div class="exp-img">
+          <img
+            src="/arquivos/Qst-exp-title-dsk.png"
+            alt="Experiencia Quest Medellín ColombiaTex"
+          />
+        </div>
+        <div class="stand">
+          <div class="title-text">
+            <h2>STAND</h2>
+            <p>
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+              Veritatis harum sint rem at beatae corrupti saepe, blanditiis eos
+              nihil quae cupiditate! Recusandae necessitatibus suscipit
+              repudiandae!
+            </p>
+          </div>
+          <img src="/arquivos/Qst-denim-vid.gif" alt="" />
+        </div>
+      </div>
+    </main>
+    <script src="https://io.vtex.com.br/front-libs/jquery/1.8.3/jquery-1.8.3.min.js?v=1.5.63.2494"></script>
+    <script type="text/javascript">
+      var listado = $(".filtrado ul li");
+
+      for (let i = 0; i < listado.length; i++) {
+        $(listado[i]).on("click", function () {
+          $(listado).removeClass("selected");
+          if ($(listado[i]).hasClass("selected")) {
+            $(listado[i]).removeClass("selected");
+          } else {
+            $(listado[i]).addClass("selected");
+          }
+
+          switch ($(listado[i]).text()) {
+            case "CHAQUETAS":
+              $("#c-c").addClass("show");
+              $("#c-j").addClass("hide");
+              $("#c-f").addClass("hide");
+              $("#c-b").addClass("hide");
+              $("#c-j").removeClass("show");
+              $("#c-f").removeClass("show");
+              $("#c-b").removeClass("show");
+
+              break;
+            case "FALDAS":
+              $("#c-f").addClass("show");
+              $("#c-j").addClass("hide");
+              $("#c-c").addClass("hide");
+              $("#c-b").addClass("hide");
+              $("#c-j").removeClass("show");
+              $("#c-c").removeClass("show");
+              $("#c-b").removeClass("show");
+              break;
+            case "BERMUDAS":
+              $("#c-b").addClass("show");
+              $("#c-j").addClass("hide");
+              $("#c-f").addClass("hide");
+              $("#c-c").addClass("hide");
+              $("#c-j").removeClass("show");
+              $("#c-f").removeClass("show");
+              $("#c-c").removeClass("show");
+              break;
+
+            default:
+              $("#c-j").addClass("show");
+              $("#c-b").addClass("hide");
+              $("#c-f").addClass("hide");
+              $("#c-c").addClass("hide");
+              $("#c-b").removeClass("show");
+              $("#c-f").removeClass("show");
+              $("#c-c").removeClass("show");
+
+              break;
+          }
+        });
+      }
+    </script>
+  </body>
+</html>
