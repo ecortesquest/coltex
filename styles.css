@@ -8,6 +8,7 @@ body,
 ul {
   margin: 0;
   padding: 0;
+  font-family: "Work Sans", sans-serif;
 }
 
 .coltex-main {
@@ -81,11 +82,13 @@ ul {
   width: 100%;
   text-align: center;
   padding: 1rem;
+  cursor: pointer;
 }
 
 .selected {
   background-color: #cecece;
   transition: all 0.3s ease-in-out;
+  cursor: default !important;
 }
 /*end filtros*/
 
@@ -94,6 +97,7 @@ ul {
   width: 100%;
   align-items: center;
   justify-content: center;
+  margin: 6rem 0 0 0;
 }
 .title-patro-cont img {
   width: 65%;
@@ -172,6 +176,9 @@ ul {
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  background: url("/arquivos/Qst-stand-bg.png") center/contain;
+  background-repeat: no-repeat;
+  gap: 2rem;
 }
 .exp-img {
   width: 100%;
@@ -187,7 +194,9 @@ ul {
 .stand {
   width: 90%;
   display: flex;
+  align-items: start;
   margin: 1rem 0;
+  justify-content: space-between;
 }
 .title-text {
   display: flex;
@@ -195,18 +204,119 @@ ul {
   align-items: center;
   justify-content: center;
   gap: 1rem;
-  width: 50%;
+  width: 48%;
+}
+.title-text p {
+  text-align: justify;
 }
 .stand img {
-  width: 50%;
+  width: 48%;
 }
+
+.galeria {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+.fotos-galeria {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.fotos-galeria a {
+  width: 32%;
+}
+.fotos-galeria a img {
+  width: 100%;
+}
+
+.img-mb {
+  display: none;
+}
+
 /*MEDIA QUERIES*/
 
 @media (max-width: 600px) {
+  .img-dsk {
+    display: none;
+  }
+  .img-mb {
+    display: block;
+  }
   .coltex-banner img:nth-child(2) {
     display: flex;
   }
   .coltex-banner img:nth-child(1) {
     display: none;
+  }
+
+  .filtros ul li {
+    padding: 0.5rem 0.5rem;
+  }
+  .denim-izq p,
+  .denim-der p {
+    padding: 0;
+  }
+  .title-patro-cont img {
+    width: 90%;
+  }
+  .denim-cont {
+    flex-direction: column;
+    align-items: center;
+    gap: 4rem;
+    padding: 0;
+    top: auto;
+  }
+  .denim-izq,
+  .denim-der {
+    width: 92%;
+    padding: 0;
+  }
+  .filtrado ul li {
+    padding: 1rem 0.5rem;
+    width: 92%;
+  }
+
+  .filtrado ul {
+    width: 100%;
+  }
+  .exp-img img {
+    width: 75%;
+    margin: 1rem 0;
+  }
+  .stand {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+  }
+  .title-text {
+    width: 100%;
+  }
+  .stand img {
+    width: 85%;
+  }
+}
+@media (max-width: 350px) {
+  .denim-cont {
+    gap: 0;
+    top: 0;
+    padding: 0;
+  }
+  .filtros ul {
+    flex-direction: column;
+  }
+  .filtros ul li {
+    width: 50%;
+    border: none;
+    border-bottom: 1px solid rgb(102, 102, 102);
+  }
+  .filtrado ul {
+    width: 90%;
+    flex-direction: column;
   }
 }
