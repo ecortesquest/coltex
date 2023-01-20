@@ -176,7 +176,7 @@ ul {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  background: url("/arquivos/Qst-stand-bg.png") center/contain;
+  background: url("/arquivos/Qst-bg-denim-bottom.png") center/contain;
   background-repeat: no-repeat;
   gap: 2rem;
 }
@@ -237,12 +237,24 @@ ul {
 .img-mb {
   display: none;
 }
+.bottom-img {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.bottom-img img {
+  width: 50%;
+}
 
 /*MEDIA QUERIES*/
 
 @media (max-width: 600px) {
   .img-dsk {
     display: none;
+  }
+  .bottom-img img {
+    width: 100%;
   }
   .img-mb {
     display: block;
